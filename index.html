@@ -5,13 +5,16 @@
 	<title>jQuery SelectSkin</title>
     
     <link rel="stylesheet" href="src/jquery.selectskin.css" type="text/css" media="screen">
-    
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
     <script type="text/javascript" src="src/jquery.selectskin.js"></script>
     
     <style type="text/css">
+        body{ font-family:"Helvetica"; }
+        #container{ margin:0 auto; width:700px; }
         .example{ padding:10px 0; }
-        .code{ background:#000; color:#fff; padding:10px; width:40%; margin:0; }
+        .by{ font-size:40%; }
+        .code{ background:#000; color:#fff; padding:10px; margin:0; line-height:1em; vertical-align: baseline; }
+        h4{ margin-bottom:10px; }
     </style>
     <script type="text/javascript">
         $(function() {
@@ -19,100 +22,123 @@
         });
     </script>
 </head>
-<body>
-    
-    <h1>jQuery SelectSkin</h1>
-    <div class="some-div">
-        <h2>Demo</h2>
-        <div class="example">
-            <select>
-                <option value="0">Estados</option>
-                <option value="ac">Acre</option>
-                <option value="al">Alagoas</option>
-                <option value="ap">Amapá</option>
-                <option value="am">Amazonas</option>
-                <option value="ba">Bahia</option>
-                <option value="ce">Ceará</option>
-                <option value="df">Distrito Federal</option>
-                <option value="es">Espirito Santo</option>
-                <option value="go">Goiás</option>
-                <option value="ma">Maranhão</option>
-                <option value="ms">Mato Grosso do Sul</option>
-                <option value="mt">Mato Grosso</option>
-                <option value="mg">Minas Gerais</option>
-                <option value="pa">Pará</option>
-                <option value="pb">Paraíba</option>
-                <option value="pr">Paraná</option>
-                <option value="pe">Pernambuco</option>
-                <option value="pi">Piauí</option>
-                <option value="rj">Rio de Janeiro</option>
-                <option value="rn">Rio Grande do Norte</option>
-                <option value="rs">Rio Grande do Sul</option>
-                <option value="ro">Rondônia</option>
-                <option value="rr">Roraima</option>
-                <option value="sc">Santa Catarina</option>
-                <option value="sp">São Paulo</option>
-                <option value="se">Sergipe</option>
-                <option value="to">Tocantins</option>
-            </select>
-        </div>
-
-        <div class="example">
-            <select>
-                <option>Cidades</option>
-                <option>Adamantina</option>
-                <option>Adolfo</option>
-                <option>Aguai</option>
-                <option>Aguas da Prata</option>
-                <option>Aguas de Lindoia</option>
-                <option>Aguas de Santa Barbara</option>
-                <option>Aguas de Sao Pedro</option>
-                <option>Agudos</option>
-                <option>Alambari</option>
-                <option>Alfredo Marcondes</option>
-                <option>Altair</option>
-                <option>Altinopolis</option>
-                <option>Alto Alegre</option>
-                <option>Aluminio</option>
-                <option>Alvares Florence</option>
-                <option>Alvares Machado</option>
-                <option>Alvaro de Carvalho</option>
-                <option>Alvinlandia</option>
-                <option>Americana</option>
-                <option>Americo Brasiliense</option>
-                <option>Americo de Campos</option>
-                <option>Amparo</option>
-                <option>Analandia</option>
-                <option>Andradina</option>
-                <option>Angatuba</option>
-                <option>Anhembi</option>
-                <option>Anhumas</option>
-                <option>Aparecida d'Oeste</option>
-                <option>Aparecida</option>
-                <option>Apiai</option>
-                <option>Aracariguama</option>
-                <option>Aracatuba</option>
-                <option>Aracoiaba da Serra</option>
-                <option>Aramina</option>
-                <option>Arandu</option>
-                <option>Arapei</option>
-                <option>Araraquara</option>
-                <option>Araras</option>
-                <option>Arco-Iris</option>
-                <option>Arealva</option>
-                <option>Areias</option>
-                <option>Areiopolis</option>
-                <option>Ariranha</option>
-                <option>Artur Nogueira</option>
-                <option>Aruja</option>
-                <option>Aspasia</option>
-            </select>
-        </div>
+<body> 
+    <div id="container">
         
-        <h3>Usage:</h3>
-        <pre class="code">
-    $('select').SelectSkin();
-        </pre>
+        <h1>jQuery SelectSkin</h1>
+        <div class="some-div">
+            <h2>Demo</h2>
+            <div class="example">
+                <select>
+                    <option value="0">Estados</option>
+                    <option value="ac">Acre</option>
+                    <option value="al">Alagoas</option>
+                    <option value="ap">Amapá</option>
+                    <option value="am">Amazonas</option>
+                    <option value="ba">Bahia</option>
+                    <option value="ce">Ceará</option>
+                    <option value="df">Distrito Federal</option>
+                    <option value="es">Espirito Santo</option>
+                    <option value="go">Goiás</option>
+                    <option value="ma">Maranhão</option>
+                    <option value="ms">Mato Grosso do Sul</option>
+                    <option value="mt">Mato Grosso</option>
+                    <option value="mg">Minas Gerais</option>
+                    <option value="pa">Pará</option>
+                    <option value="pb">Paraíba</option>
+                    <option value="pr">Paraná</option>
+                    <option value="pe">Pernambuco</option>
+                    <option value="pi">Piauí</option>
+                    <option value="rj">Rio de Janeiro</option>
+                    <option value="rn">Rio Grande do Norte</option>
+                    <option value="rs">Rio Grande do Sul</option>
+                    <option value="ro">Rondônia</option>
+                    <option value="rr">Roraima</option>
+                    <option value="sc">Santa Catarina</option>
+                    <option value="sp">São Paulo</option>
+                    <option value="se">Sergipe</option>
+                    <option value="to">Tocantins</option>
+                </select>
+            </div>
+
+            <div class="example">
+                <select>
+                    <option>Cidades</option>
+                    <option>Adamantina</option>
+                    <option>Adolfo</option>
+                    <option>Aguai</option>
+                    <option>Aguas da Prata</option>
+                    <option>Aguas de Lindoia</option>
+                    <option>Aguas de Santa Barbara</option>
+                    <option>Aguas de Sao Pedro</option>
+                    <option>Agudos</option>
+                    <option>Alambari</option>
+                    <option>Alfredo Marcondes</option>
+                    <option>Altair</option>
+                    <option>Altinopolis</option>
+                    <option>Alto Alegre</option>
+                    <option>Aluminio</option>
+                    <option>Alvares Florence</option>
+                    <option>Alvares Machado</option>
+                    <option>Alvaro de Carvalho</option>
+                    <option>Alvinlandia</option>
+                    <option>Americana</option>
+                    <option>Americo Brasiliense</option>
+                    <option>Americo de Campos</option>
+                    <option>Amparo</option>
+                    <option>Analandia</option>
+                    <option>Andradina</option>
+                    <option>Angatuba</option>
+                    <option>Anhembi</option>
+                    <option>Anhumas</option>
+                    <option>Aparecida d'Oeste</option>
+                    <option>Aparecida</option>
+                    <option>Apiai</option>
+                    <option>Aracariguama</option>
+                    <option>Aracatuba</option>
+                    <option>Aracoiaba da Serra</option>
+                    <option>Aramina</option>
+                    <option>Arandu</option>
+                    <option>Arapei</option>
+                    <option>Araraquara</option>
+                    <option>Araras</option>
+                    <option>Arco-Iris</option>
+                    <option>Arealva</option>
+                    <option>Areias</option>
+                    <option>Areiopolis</option>
+                    <option>Ariranha</option>
+                    <option>Artur Nogueira</option>
+                    <option>Aruja</option>
+                    <option>Aspasia</option>
+                </select>
+            </div>
+
+            <h3>Browser Suporte</h3>
+            
+            <p>Tested in the following browsers:</p>
+            <ul>
+                <li>IE7+</li>
+                <li>Firefox</li>
+                <li>Chrome</li>
+                <li>Opera</li>
+                <li>Safari for iOS</li>
+            </ul>
+            
+            <h3>Usage:</h3>
+            
+            <h4>Add the plugin files</h4>
+            <script src="https://gist.github.com/1609568.js?file=header.html"></script>
+            
+            <h4>Call on select elements</h4>
+            <script src="https://gist.github.com/1609579.js?file=example.js"></script>
+            
+            <h4>Download</h4>
+            <pre class="code">git clone git://github.com/carlosrberto/jquery-selectskin.git</pre>
+            
+            <div class="fork">
+                <a href="https://github.com/carlosrberto/jquery-selectskin"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork jQuery SelectSkin on GitHub"></a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
