@@ -10,11 +10,15 @@
     
     <style type="text/css">
         body{ font-family:"Helvetica"; }
-        #container{ margin:0 auto; width:700px; }
+        h1{ margin-bottom:0.3em; }
+        .intro{ margin-top:0; }
+        #container{ margin:0 auto; width:700px; padding:20px 0 60px; }
         .example{ padding:10px 0; }
         .by{ font-size:40%; }
         .code{ background:#000; color:#fff; padding:10px; margin:0; line-height:1em; vertical-align: baseline; }
         h4{ margin-bottom:10px; }
+        .credits{ text-align:right; font-size:14px; }
+        a{ color:#999; }
     </style>
     <script type="text/javascript">
         $(function() {
@@ -26,6 +30,7 @@
     <div id="container">
         
         <h1>jQuery SelectSkin</h1>
+        <p class="intro">Customize the <strong>select</strong> element preserving the native user interface for the option elements</p>
         <div class="some-div">
             <h2>Demo</h2>
             <div class="example">
@@ -137,6 +142,15 @@
             
             <div class="fork">
                 <a href="https://github.com/carlosrberto/jquery-selectskin"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork jQuery SelectSkin on GitHub"></a>
+            </div>
+            
+            <h4>Issues</h4>
+            <ul>
+                <li>Does not work with with select multiple elements</li>
+            </ul>
+            
+            <div class="credits">
+                <p>by <a href="http://carlosroberto.name">Carlos Roberto Gomes Junior</a></p>
             </div>
         </div>
     </div>
