@@ -18,7 +18,7 @@
         if ( isBadBrowser || !select.tagName || select.tagName && select.tagName.toLowerCase() !== 'select' ) {
             return;
             // throw new Error("SelectSkin expect a select element as first parameter, "+select.tagName+" was given")
-        };
+        }
         
         if ( options ) {
             this.settings = $.extend(defaults, options);            
@@ -40,7 +40,7 @@
                 
         // events
         this.select.bind('change', $.proxy(this.changeHandler, this));
-    };
+    }
     
     SelectSkin.prototype = {
         createDOM : function() {
@@ -62,14 +62,35 @@
             this.text.text(this.selectDOM.options[this.selectDOM.selectedIndex].text);
         },
         
-        changeHandler : function(event) {
+        changeHandler : function() {
             this.changeText();
+        },
+        
+        update: function(){
+            this.changeText();
+        },
+        
+        reset: function(){
+            this.selectDOM.selectedIndex = 0;
+            this.update();    
         }
     };
     
-    $.fn.SelectSkin = function(options) {
-        this.each(function() {
-            $(this).data('SelectSkin', new SelectSkin(this));
+    $.fn.SelectSkin = function( method ) {
+        var args = arguments;
+        return this.each(function() {
+            if ( !$(this).data('SelectSkin') ) {
+                $(this).data('SelectSkin', new SelectSkin(this, method));
+                return;
+            }
+            
+            var api = $(this).data('SelectSkin');
+            
+            if ( api[ method ] ) {
+                api[ method ].apply( api, Array.prototype.slice.call( arguments, 1 ) );
+            } else {
+                $.error( 'Method ' +  method + ' does not exist on jQuery.SelectSkin' );
+            }
         });
     }
 })(jQuery);
