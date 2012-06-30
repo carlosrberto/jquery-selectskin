@@ -1,12 +1,14 @@
 /*
 * jQuery SelectSkin
-* http://carlosroberto.name/
+* http://carlosrberto.github.com/jquery-selectskin/
 *
 * Copyright (c) 2012 Carlos Roberto Gomes Junior
+* http://carlosroberto.name/
+* 
 * Licensed under a Creative Commons Attribution 3.0 License
 * http://creativecommons.org/licenses/by-sa/3.0/
 *
-* Version: 0.1
+* Version: 0.2
 */
 
 (function($) {
@@ -77,8 +79,8 @@
     };
     
     $.fn.SelectSkin = function( method ) {
-        var args = arguments;
         return this.each(function() {
+            // TODO: find a way to do this better
             if ( !$(this).data('SelectSkin') ) {
                 $(this).data('SelectSkin', new SelectSkin(this, method));
                 return;
@@ -92,5 +94,5 @@
                 $.error( 'Method ' +  method + ' does not exist on jQuery.SelectSkin' );
             }
         });
-    }
+    };
 })(jQuery);
