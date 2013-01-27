@@ -1,0 +1,35 @@
+{
+    "name": "selectskin",
+    "title": "jQuery SelectSkin",
+    "description": "A basic html select element replacement.",
+    "keywords": [
+        "form",
+        "select",
+        "replacement"
+    ],
+    "version": "1.1.0",
+    "author": {
+        "name": "Carlos Roberto Gomes Junior",
+        "url": "http://http://carlosroberto.name/"
+    },
+    "maintainers": [
+        {
+            "name": "Carlos Roberto Gomes Junior",
+            "email": "carlos.rberto@gmail.com",
+            "url": "http://carlosroberto.name/"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "Creative Commons Attribution 3.0 License",
+            "url": "http://creativecommons.org/licenses/by-sa/3.0/"
+        }
+    ],
+    "bugs": "https://github.com/carlosrberto/jquery-selectskin/issues",
+    "homepage": "http://carlosrberto.github.com/jquery-selectskin/",
+    "docs": "http://carlosrberto.github.com/jquery-selectskin/",
+    "download": "https://github.com/carlosrberto/jquery-selectskin/tags",
+    "dependencies": {
+        "jquery": ">=1.0"
+    }
+}
