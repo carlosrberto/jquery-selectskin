@@ -88,10 +88,12 @@
             
             var api = $(this).data('SelectSkin');
             
-            if ( api[ method ] ) {
-                api[ method ].apply( api, Array.prototype.slice.call( arguments, 1 ) );
-            } else {
-                $.error( 'Method ' +  method + ' does not exist on jQuery.SelectSkin' );
+            if ( method ) {
+                if ( api[ method ] ) {
+                    api[ method ].apply( api, Array.prototype.slice.call( arguments, 1 ) );
+                } else {
+                    $.error( 'Method ' +  method + ' does not exist on jQuery.SelectSkin' );
+                }                
             }
         });
     };
