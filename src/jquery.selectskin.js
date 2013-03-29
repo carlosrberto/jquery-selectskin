@@ -2,24 +2,36 @@
 * jQuery SelectSkin
 * http://carlosrberto.github.com/jquery-selectskin/
 *
-* Copyright (c) 2012 Carlos Roberto Gomes Junior
+* Copyright (c) 2013 Carlos Roberto Gomes Junior
 * http://carlosroberto.name/
 * 
 * Licensed under a Creative Commons Attribution 3.0 License
 * http://creativecommons.org/licenses/by-sa/3.0/
 *
-* Version: 1.1.2
+* Version: 2.0.0
 */
 
 (function($) {
-    var isBadBrowser = $.browser.msie && $.browser.version < 7;
-    var defaults = {};
+    var ie, isBadBrowser, defaults;
+
+    // nice way to detect IE
+    // https://gist.github.com/padolsey/527683
+    var ie = (function(){
+        var undef, v = 3, div = document.createElement('div');
+        while (
+            div.innerHTML = '<!--[if gt IE '+(++v)+']><i></i><![endif]-->',
+            div.getElementsByTagName('i')[0]
+        );
+        return v > 4 ? v : undef;
+    }());
+
+    isBadBrowser = (typeof ie != undefined && ie < 8);
+    defaults = {};
     
     function SelectSkin (select, options) {
         
         if ( isBadBrowser || !select.tagName || select.tagName && select.tagName.toLowerCase() !== 'select' ) {
             return;
-            // throw new Error("SelectSkin expect a select element as first parameter, "+select.tagName+" was given")
         }
         
         if ( options ) {
@@ -36,16 +48,16 @@
         this.text = $('<div>', { 'class' : 'select-skin-text' });
         
         // init methods
-        this.createDOM();
-        this.setStyles();
-        this.changeText();
+        this._createDOM();
+        this._setStyles();
+        this._changeText();
                 
         // events
-        this.select.bind('change', $.proxy(this.changeHandler, this));
+        this.select.on('change.SelectSkin', $.proxy(this._changeHandler, this));
     }
     
     SelectSkin.prototype = {
-        createDOM : function() {
+        _createDOM : function() {
             this.select.after(this.wrapper);
             this.select.appendTo(this.wrapper);
             this.textClip.append(this.text);
@@ -53,47 +65,83 @@
             this.wrapper.append(this.mask);
         },
         
-        setStyles: function() {
+        _setStyles: function() {
             this.select.css({
                 'width' : '100%',
                 'opacity' : 0
             });
         },
-        
-        changeText : function() {
-            this.text.text(this.selectDOM.options[this.selectDOM.selectedIndex].text);
+
+        _removeStyles: function() {
+            this.select.css({
+                'width' : '',
+                'opacity' : ''
+            });  
         },
         
-        changeHandler : function() {
-            this.changeText();
+        _changeText : function() {
+            var selectedEl = this.selectDOM.options[this.selectDOM.selectedIndex];
+
+            if ( typeof selectedEl !== "undefined" ) {
+                this.text.text(selectedEl.text);
+            } else {
+                this.text.text('---');
+            }
+        },
+        
+        _changeHandler : function() {
+            this._changeText();
         },
         
         update: function(){
-            this.changeText();
+            this._changeText();
         },
+
+        empty: function() {
+            this.select.empty();
+            this.update();
+        },
+
+        append: function(html) {
+            this.select.append(html);
+            this.update();
+        },
+
+        prepend: function(html) {
+            this.select.prepend(html);
+            this.update();
+        },        
         
         reset: function(){
             this.selectDOM.selectedIndex = 0;
             this.update();    
+        },
+
+        destroy: function() {
+            this.select.off('.SelectSkin');
+            this.wrapper.before(this.select);
+            this._removeStyles();
+            this.wrapper.remove();
+            $.removeData(this.selectDOM, 'SelectSkin');
         }
     };
     
     $.fn.SelectSkin = function( method ) {
+        var args = arguments;
+
         return this.each(function() {
-            // TODO: find a way to do this better
-            if ( !$(this).data('SelectSkin') ) {
-                $(this).data('SelectSkin', new SelectSkin(this, method));
+
+            if ( !$.data(this, 'SelectSkin') ) {
+                $.data(this, 'SelectSkin', new SelectSkin(this, method));
                 return;
             }
             
-            var api = $(this).data('SelectSkin');
+            var api = $.data(this, 'SelectSkin');
             
-            if ( method ) {
-                if ( api[ method ] ) {
-                    api[ method ].apply( api, Array.prototype.slice.call( arguments, 1 ) );
-                } else {
-                    $.error( 'Method ' +  method + ' does not exist on jQuery.SelectSkin' );
-                }                
+            if ( typeof method === 'string' && method.charAt(0) !== '_' && api[ method ] ) {
+                api[ method ].apply( api, Array.prototype.slice.call( args, 1 ) );
+            } else {
+                $.error( 'Method ' +  method + ' does not exist on jQuery.SelectSkin' );
             }
         });
     };

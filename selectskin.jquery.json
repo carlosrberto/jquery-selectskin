@@ -7,7 +7,7 @@
         "select",
         "replacement"
     ],
-    "version": "1.1.2",
+    "version": "2.0.0",
     "author": {
         "name": "Carlos Roberto Gomes Junior",
         "url": "http://http://carlosroberto.name/"
@@ -30,6 +30,6 @@
     "docs": "http://carlosrberto.github.com/jquery-selectskin/",
     "download": "https://github.com/carlosrberto/jquery-selectskin/tags",
     "dependencies": {
-        "jquery": ">=1.0"
+        "jquery": ">=1.7"
     }
 }
