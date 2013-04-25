@@ -8,7 +8,7 @@
 * Licensed under a Creative Commons Attribution 3.0 License
 * http://creativecommons.org/licenses/by-sa/3.0/
 *
-* Version: 2.0.0
+* Version: 2.0.2
 */
 
 (function($) {

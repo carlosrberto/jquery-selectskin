@@ -7,10 +7,10 @@
         "select",
         "replacement"
     ],
-    "version": "2.0.0",
+    "version": "2.0.2",
     "author": {
         "name": "Carlos Roberto Gomes Junior",
-        "url": "http://http://carlosroberto.name/"
+        "url": "http://carlosroberto.name/"
     },
     "maintainers": [
         {
