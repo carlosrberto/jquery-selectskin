@@ -19,6 +19,10 @@ $(function(){
 });
 ```
 
+## Download
+
+All ready-to-use files are located in the [`dist/`](dist/) directory.
+
 ## API
 
 Some useful methods:
