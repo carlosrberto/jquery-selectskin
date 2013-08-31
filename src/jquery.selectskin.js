@@ -1,22 +1,9 @@
-/*
-* jQuery SelectSkin
-* http://carlosrberto.github.com/jquery-selectskin/
-*
-* Copyright (c) 2013 Carlos Roberto Gomes Junior
-* http://carlosroberto.name/
-* 
-* Licensed under a Creative Commons Attribution 3.0 License
-* http://creativecommons.org/licenses/by-sa/3.0/
-*
-* Version: 2.0.2
-*/
-
 (function($) {
     var ie, isBadBrowser, defaults;
 
     // nice way to detect IE
     // https://gist.github.com/padolsey/527683
-    var ie = (function(){
+    ie = (function(){
         var undef, v = 3, div = document.createElement('div');
         while (
             div.innerHTML = '<!--[if gt IE '+(++v)+']><i></i><![endif]-->',
@@ -25,7 +12,7 @@
         return v > 4 ? v : undef;
     }());
 
-    isBadBrowser = (typeof ie != undefined && ie < 8);
+    isBadBrowser = (typeof ie !== undefined && ie < 8);
     defaults = {};
     
     function SelectSkin (select, options) {
