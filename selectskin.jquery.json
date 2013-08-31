@@ -1,35 +1,35 @@
 {
-    "name": "selectskin",
-    "title": "jQuery SelectSkin",
-    "description": "A basic html select element replacement.",
-    "keywords": [
-        "form",
-        "select",
-        "replacement"
-    ],
-    "version": "2.0.2",
-    "author": {
-        "name": "Carlos Roberto Gomes Junior",
-        "url": "http://carlosroberto.name/"
-    },
-    "maintainers": [
-        {
-            "name": "Carlos Roberto Gomes Junior",
-            "email": "carlos.rberto@gmail.com",
-            "url": "http://carlosroberto.name/"
-        }
-    ],
-    "licenses": [
-        {
-            "type": "Creative Commons Attribution 3.0 License",
-            "url": "http://creativecommons.org/licenses/by-sa/3.0/"
-        }
-    ],
-    "bugs": "https://github.com/carlosrberto/jquery-selectskin/issues",
-    "homepage": "http://carlosrberto.github.com/jquery-selectskin/",
-    "docs": "http://carlosrberto.github.com/jquery-selectskin/",
-    "download": "https://github.com/carlosrberto/jquery-selectskin/tags",
-    "dependencies": {
-        "jquery": ">=1.7"
+  "name": "selectskin",
+  "version": "2.0.2",
+  "title": "jquery-selectskin",
+  "author": {
+    "name": "Carlos Roberto Gomes Junior",
+    "url": "http://carlosroberto.name/"
+  },
+  "licenses": [
+    {
+      "type": "Creative Commons Attribution 3.0 License",
+      "url": "http://creativecommons.org/licenses/by-sa/3.0/"
     }
+  ],
+  "dependencies": {
+    "jquery": ">=1.7"
+  },
+  "description": "A basic html select element replacement.",
+  "keywords": [
+    "form",
+    "select",
+    "replacement"
+  ],
+  "homepage": "http://carlosrberto.github.com/jquery-selectskin/",
+  "docs": "http://carlosrberto.github.com/jquery-selectskin/",
+  "download": "https://github.com/carlosrberto/jquery-selectskin/tags",
+  "bugs": "https://github.com/carlosrberto/jquery-selectskin/issues",
+  "maintainers": [
+    {
+      "name": "Carlos Roberto Gomes Junior",
+      "email": "carlos.rberto@gmail.com",
+      "url": "http://carlosroberto.name/"
+    }
+  ]
 }
