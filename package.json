@@ -1,0 +1,47 @@
+{
+  "name": "jquery-selectskin",
+  "version": "2.0.2",
+  "description": "A basic html select element replacement.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/carlosrberto/jquery-selectskin.git"
+  },
+  "keywords": [
+    "form",
+    "select",
+    "replacement"
+  ],
+  "author": {
+    "name": "Carlos Roberto Gomes Junior",
+    "url": "http://carlosroberto.name/"
+  },
+  "maintainers": [
+    {
+      "name": "Carlos Roberto Gomes Junior",
+      "email": "carlos.rberto@gmail.com",
+      "url": "http://carlosroberto.name/"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "Creative Commons Attribution 3.0 License",
+      "url": "http://creativecommons.org/licenses/by-sa/3.0/"
+    }
+  ],
+  "bugs": "https://github.com/carlosrberto/jquery-selectskin/issues",
+  "homepage": "http://carlosrberto.github.com/jquery-selectskin/",
+  "docs": "http://carlosrberto.github.com/jquery-selectskin/",
+  "download": "https://github.com/carlosrberto/jquery-selectskin/tags",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-jquerymanifest": "~0.1.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-open": "~0.2.2"
+  }
+}
