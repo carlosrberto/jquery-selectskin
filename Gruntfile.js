@@ -22,8 +22,6 @@ module.exports = function(grunt) {
             name: 'jquery.selectskin',
         },
 
-        clean: ["dist"],
-
         jquerymanifest: {
             options: {
                 source: '<%= pkg %>',
@@ -33,6 +31,23 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        "json-replace": {
+            options: {
+                replace : {
+                    version: '<%= pkg.version %>'
+                }
+            },
+
+            bower: {
+                files : [{
+                    src  : 'bower.json',
+                    dest : 'bower.json'
+                }]
+            }
+        },
+
+        clean: ["dist"],
 
         concat: {
             options: {
@@ -111,9 +126,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-jquerymanifest');
+    grunt.loadNpmTasks('grunt-json-replace');
     grunt.loadNpmTasks('grunt-open');
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'jshint', 'jquerymanifest', 'concat', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['clean', 'jshint', 'jquerymanifest', 'json-replace', 'concat', 'uglify', 'cssmin']);
     grunt.registerTask('server', ['connect:demo', 'open:demo', 'watch']);
 };
