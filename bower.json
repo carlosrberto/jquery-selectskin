@@ -2,8 +2,8 @@
 	"name": "selectskin",
 	"version": "2.0.3",
 	"main": [
-		"./src/jquery.selectskin.js",
-		"./src/jquery.selectskin.css"
+		"./dist/jquery.selectskin.js",
+		"./dist/jquery.selectskin.css"
 	],
 	"dependencies": {
 		"jquery": ">=1.7"
