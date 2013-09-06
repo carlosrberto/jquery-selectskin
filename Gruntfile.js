@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             ' * Version: <%= pkg.version %>\n' +
             ' */\n',
 
-            name: 'jquery.selectskin',
+            name: 'jquery.selectskin'
         },
 
         jquerymanifest: {
@@ -92,18 +92,22 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            all: ['Gruntfile.js', 'src/**/*.js']
+            all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
+        },
+
+        qunit: {
+            all: ['test/**/*.html']
         },
 
         watch: {
             scripts: {
-                files: ['src/*.js'],
+                files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
                 tasks: ['jshint']
             }
         },
 
         connect: {
-            demo: {
+            dev: {
                 options: {
                     port: 8000
                 }
@@ -112,8 +116,11 @@ module.exports = function(grunt) {
 
         open: {
             demo: {
-                path: 'http://localhost:8000/demo/',
-                app: 'Google Chrome'
+                path: 'http://localhost:8000/demo/'
+            },
+
+            test: {
+                path: 'http://localhost:8000/test/jquery.selectskin.html'
             }
         }
     });
@@ -125,11 +132,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-jquerymanifest');
     grunt.loadNpmTasks('grunt-json-replace');
     grunt.loadNpmTasks('grunt-open');
 
     // Default task(s).
     grunt.registerTask('default', ['clean', 'jshint', 'jquerymanifest', 'json-replace', 'concat', 'uglify', 'cssmin']);
-    grunt.registerTask('server', ['connect:demo', 'open:demo', 'watch']);
+    grunt.registerTask('server', ['connect', 'open:demo', 'watch']);
+    grunt.registerTask('testserver', ['connect', 'open:test', 'watch']);
+    grunt.registerTask('test', ['qunit']);
 };
