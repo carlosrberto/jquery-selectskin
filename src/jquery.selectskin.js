@@ -67,13 +67,14 @@
         },
 
         _changeText : function() {
-            var selectedEl = this.selectDOM.options[this.selectDOM.selectedIndex];
-
-            if ( typeof selectedEl !== "undefined" ) {
-                this.text.text(selectedEl.text);
-            } else {
-                this.text.text('---');
+            var text = '---';
+            if (this.selectDOM.selectedIndex >= 0) {
+                var selectedEl = this.selectDOM.options[this.selectDOM.selectedIndex];
+                if ( typeof selectedEl !== "undefined" ) {
+                    text = selectedEl.text;
+                }
             }
+            this.text.text(text);
         },
 
         _changeHandler : function() {
