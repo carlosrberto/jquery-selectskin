@@ -1,6 +1,6 @@
 {
   "name": "selectskin",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "title": "jquery-selectskin",
   "author": {
     "name": "Carlos Roberto Gomes Junior",
@@ -21,7 +21,6 @@
     "select",
     "replacement"
   ],
-  "homepage": "http://carlosrberto.github.com/jquery-selectskin/",
   "docs": "http://carlosrberto.github.com/jquery-selectskin/",
   "download": "https://github.com/carlosrberto/jquery-selectskin/tags",
   "bugs": "https://github.com/carlosrberto/jquery-selectskin/issues",
@@ -31,5 +30,6 @@
       "email": "carlos.rberto@gmail.com",
       "url": "http://carlosroberto.name/"
     }
-  ]
+  ],
+  "homepage": "http://carlosrberto.github.com/jquery-selectskin/"
 }

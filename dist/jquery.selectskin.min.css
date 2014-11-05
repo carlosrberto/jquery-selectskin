@@ -2,13 +2,13 @@
  * jQuery SelectSkin
  * http://carlosrberto.github.com/jquery-selectskin/
  *
- * Copyright (c) 2013 Carlos Roberto Gomes Junior
+ * Copyright (c) 2014 Carlos Roberto Gomes Junior
  * http://carlosroberto.name/
  * 
  * Licensed under a Creative Commons Attribution 3.0 License
  * http://creativecommons.org/licenses/by-sa/3.0/
  *
- * Version: 2.0.3
+ * Version: 2.0.4
  */
 
 .select-skin{width:200px;position:relative}.select-skin select{width:100%;height:100%;float:none;display:block;margin:0;padding:0;position:absolute;left:0;top:0;-webkit-appearance:menulist-button}.select-skin-mask{width:100%;background:#333}.select-skin-text{white-space:nowrap;padding:5px 10px;line-height:1em;font-size:1em}.select-skin-text-clip{margin-right:35px;overflow:hidden;background:#999}

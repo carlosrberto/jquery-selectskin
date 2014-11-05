@@ -2,13 +2,13 @@
  * jQuery SelectSkin
  * http://carlosrberto.github.com/jquery-selectskin/
  *
- * Copyright (c) 2013 Carlos Roberto Gomes Junior
+ * Copyright (c) 2014 Carlos Roberto Gomes Junior
  * http://carlosroberto.name/
  * 
  * Licensed under a Creative Commons Attribution 3.0 License
  * http://creativecommons.org/licenses/by-sa/3.0/
  *
- * Version: 2.0.3
+ * Version: 2.0.4
  */
 (function($) {
     var ie, isBadBrowser, defaults;
@@ -79,13 +79,14 @@
         },
 
         _changeText : function() {
-            var selectedEl = this.selectDOM.options[this.selectDOM.selectedIndex];
-
-            if ( typeof selectedEl !== "undefined" ) {
-                this.text.text(selectedEl.text);
-            } else {
-                this.text.text('---');
+            var text = '---';
+            if (this.selectDOM.selectedIndex >= 0) {
+                var selectedEl = this.selectDOM.options[this.selectDOM.selectedIndex];
+                if ( typeof selectedEl !== "undefined" ) {
+                    text = selectedEl.text;
+                }
             }
+            this.text.text(text);
         },
 
         _changeHandler : function() {
