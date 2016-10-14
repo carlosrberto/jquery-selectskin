@@ -12,6 +12,16 @@ A basic html select element replacement.
 
 http://carlosrberto.github.com/jquery-selectskin/
 
+## Install
+```
+npm install jquery-selectskin
+```
+
+If using Webpack/Browserify
+```
+require("jquery-selectskin");
+```
+
 ## Usage
 ```javascript
 $(function(){

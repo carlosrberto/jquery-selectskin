@@ -1,5 +1,6 @@
 {
   "name": "jquery-selectskin",
+  "main": "dist/jquery.selectskin.js",
   "version": "2.0.4",
   "description": "A basic html select element replacement.",
   "repository": {
