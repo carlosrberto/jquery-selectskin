@@ -45,11 +45,11 @@
 
     SelectSkin.prototype = {
         _createDOM : function() {
-            this.select.after(this.wrapper);
-            this.select.appendTo(this.wrapper);
             this.textClip.append(this.text);
             this.mask.append(this.textClip);
             this.wrapper.append(this.mask);
+            this.select.after(this.wrapper);
+            this.select.appendTo(this.wrapper);
         },
 
         _setStyles: function() {
